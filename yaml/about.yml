@@ -1,0 +1,62 @@
+#comment
+
+name: "yuyi" #key-pair object
+
+occupation: 'shader worker'
+power: flower attack #also string
+ip_addr: 1.2.3.4 #str
+
+a num: 33 #num
+pi: 3.14159
+bigNum: 1e+10
+
+a date: 1986-06-03 14:33:21 #ISO 8601 string/date
+
+convert: !!float 23
+convertStr: !!str 23
+
+flaws: null #null
+idle: True #boolean
+idle2: true
+
+fav food: #array
+  - cake
+  - hotspot
+  - disco
+
+movies: ['blade runner','dawn of dead'] #array
+
+lover: #array and object
+  - name: "pony"
+    age: 30
+  - name: 笑笑
+    age: 31
+  - {name:"小马",age:29}
+  -
+    name: "豆豆"
+    age: 2
+    species: dog
+
+one line: > #> 合并为一行
+  aaaaaaaaaaaaaaaaaaa
+  bbbbbbbbbbbbbbbbbbb
+  ccccccccccccccccccc
+  ddddddddddddddddddd
+
+preserve format: | # 保持格式
+  aaaaaa
+    bbbb
+  ccccc
+  - o
+
+anchor info: &yuyi 于一 #挂载段
+attach anchored: *yuyi
+
+anchor obj: &doudou
+  species: dog
+
+override object:
+  name: "狗"
+  age: 1
+  <<: *doudou
+

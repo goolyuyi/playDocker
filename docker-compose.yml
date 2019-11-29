@@ -10,7 +10,7 @@ services:
       dockerfile: Dockerfile.dev
       context: ./nginx
     ports:
-      - '3050:80'
+      - '8888:80'
   api:
     build:
       dockerfile: Dockerfile.dev
@@ -30,6 +30,8 @@ services:
     build:
       dockerfile: Dockerfile.dev
       context: ./client
+    ports:
+      - '3000:${YUYIA}'
     volumes:
       - /app/node_modules
       - ./client:/app
